@@ -34,20 +34,20 @@ public class JsonUtils {
     public JsonUtils() {
     }
 
-    public static Sandwich parseSandwichJson(String sandwichJSON)
+    public static Sandwich parseSandwichJson(String json)
     {
         // If the JSON string is empty or null, then return early.
-        if (TextUtils.isEmpty(sandwichJSON)) {
+        if (TextUtils.isEmpty(json)) {
             return null;
         }
         List<Sandwich> sandwiches= new ArrayList<>();
         try {
 
             // Create a JSONObject from the JSON response string
-            JSONObject baseJsonResponse = new JSONObject(sandwichJSON);
+            JSONObject baseJsonResponse = new JSONObject(json);
 
             // Extract the JSONArray associated with the key called "results",
-            // which represents a list of features (or movies).
+            // which represents a list of features (or sandwiches).
             JSONArray sandwichArray = baseJsonResponse.getJSONArray("results");
 
             for (int i = 0; i < sandwichArray.length(); i++) {
@@ -58,7 +58,7 @@ public class JsonUtils {
                 // Extract the value for the key called "main_name"
                 String mainName = currentSandwich.getString(KEY_MAIN_NAME);
 
-                ArrayList<Sandwich> alsoKnownAs = new ArrayList<>();
+                List<Sandwich> alsoKnownAs = new ArrayList<>();
                 JSONArray alsoKnownAsArray = currentSandwich.getJSONArray(KEY_ALSO_KNOWN_AS);
 
                 String placeOfOrigin = currentSandwich.getString(KEY_PLACE_OF_ORIGIN);
@@ -67,7 +67,7 @@ public class JsonUtils {
 
                 String image = currentSandwich.getString(KEY_IMAGE);
 
-                ArrayList<Sandwich> ingredients = new ArrayList<>();
+                List<Sandwich> ingredients = new ArrayList<>();
                 JSONArray ingredientsArray = currentSandwich.getJSONArray(KEY_INGREDIENTS);
 
                 Sandwich sandwich = new Sandwich(mainName,alsoKnownAs, placeOfOrigin, description, image,ingredients);
