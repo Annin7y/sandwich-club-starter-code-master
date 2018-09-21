@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class JsonUtils {
 
@@ -32,14 +33,14 @@ public class JsonUtils {
 
     public JsonUtils() {
     }
-    
+
     public static Sandwich parseSandwichJson(String sandwichJSON)
     {
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(sandwichJSON)) {
             return null;
         }
-        ArrayList<Sandwich> sandwiches= new ArrayList<>();
+        List<Sandwich> sandwiches= new ArrayList<>();
         try {
 
             // Create a JSONObject from the JSON response string
@@ -57,13 +58,19 @@ public class JsonUtils {
                 // Extract the value for the key called "main_name"
                 String mainName = currentSandwich.getString(KEY_MAIN_NAME);
 
+                ArrayList<Sandwich> alsoKnownAs = new ArrayList<>();
+                JSONArray alsoKnownAsArray = currentSandwich.getJSONArray(KEY_ALSO_KNOWN_AS);
+
                 String placeOfOrigin = currentSandwich.getString(KEY_PLACE_OF_ORIGIN);
 
                 String description = currentSandwich.getString(KEY_DESCRIPTION);
 
-                String image = currentSandwich.getString(KEY_DESCRIPTION);
+                String image = currentSandwich.getString(KEY_IMAGE);
 
-                Sandwich sandwich = new Sandwich(mainName, placeOfOrigin, description, image);
+                ArrayList<Sandwich> ingredients = new ArrayList<>();
+                JSONArray ingredientsArray = currentSandwich.getJSONArray(KEY_INGREDIENTS);
+
+                Sandwich sandwich = new Sandwich(mainName,alsoKnownAs, placeOfOrigin, description, image,ingredients);
                 sandwiches.add(sandwich);
 
             }
