@@ -46,9 +46,9 @@ public class JsonUtils {
             // Create a JSONObject from the JSON response string
             JSONObject baseJsonResponse = new JSONObject(json);
 
-            // Extract the JSONArray associated with the key called "results",
+            // Extract the JSONArray associated with the key called "name",
             // which represents a list of features (or sandwiches).
-            JSONArray sandwichArray = baseJsonResponse.getJSONArray("results");
+            JSONArray sandwichArray = baseJsonResponse.getJSONArray("name");
 
             for (int i = 0; i < sandwichArray.length(); i++) {
 
