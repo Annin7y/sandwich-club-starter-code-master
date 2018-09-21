@@ -40,7 +40,7 @@ public class JsonUtils {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
-        List<Sandwich> sandwiches= new ArrayList<>();
+        ArrayList<Sandwich> sandwiches= new ArrayList<>();
         try {
 
             // Create a JSONObject from the JSON response string
@@ -82,6 +82,7 @@ public class JsonUtils {
             // with the message from the exception.
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
         }
-            return null;
+            // Return the list of sandwiches
+        return sandwiches;
     }
 }
