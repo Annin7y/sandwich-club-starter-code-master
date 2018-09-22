@@ -65,7 +65,7 @@ public class JsonUtils {
 
             List<Sandwich> ingredients = new ArrayList<>();
             JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
-            for (int i = 0; i < (alsoKnownAsArray.length()); i++) {
+            for (int i = 0; i < (ingredientsArray.length()); i++) {
 
                 JSONObject ingredientsObject = new JSONObject(ingredientsArray.get(i).toString());
             }
