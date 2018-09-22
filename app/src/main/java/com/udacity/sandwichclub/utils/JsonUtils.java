@@ -52,7 +52,7 @@ public class JsonUtils {
             String mainName = objectName.getString(KEY_MAIN_NAME);
 
             JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
-            for (int i = 0; i < (alsoKnownAsArray.length()); i++) {
+            for (int i = 0; i < alsoKnownAsArray.length(); i++) {
 
                 JSONObject alsoKnownObject = new JSONObject(alsoKnownAsArray.get(i).toString());
             }
@@ -65,7 +65,7 @@ public class JsonUtils {
 
             List<Sandwich> ingredients = new ArrayList<>();
             JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
-            for (int i = 0; i < (ingredientsArray.length()); i++) {
+            for (int i = 0; i < ingredientsArray.length(); i++) {
 
                 JSONObject ingredientsObject = new JSONObject(ingredientsArray.get(i).toString());
             }
