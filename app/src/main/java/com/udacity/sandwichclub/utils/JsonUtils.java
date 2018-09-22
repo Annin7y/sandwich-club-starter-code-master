@@ -50,10 +50,10 @@ public class JsonUtils {
             // Extract the value for the key called "main_name"
             String mainName = objectName.getString(KEY_MAIN_NAME);
 
-            JSONArray alsoKnownAsArray = objectName.getJSONArray(KEY_ALSO_KNOWN_AS);
+            JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
             for (int i = 0; i < (alsoKnownAsArray.length()); i++) {
 
-                JSONObject alsoKnownObject = new JSONArray(alsoKnownAsArray.getJSONObject(i).toString();
+                JSONObject alsoKnownObject = new JSONArray(alsoKnownAsArray.getJSONObject(i).toString());
             }
 
                 String placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
@@ -63,10 +63,15 @@ public class JsonUtils {
                 String image = objectName.getString(KEY_IMAGE);
 
                 List<Sandwich> ingredients = new ArrayList<>();
-                JSONArray ingredientsArray = objectName.getJSONArray(KEY_INGREDIENTS);
+                JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
+            for (int i = 0; i < (alsoKnownAsArray.length()); i++) {
 
-                Sandwich sandwich = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
-                sandwiches.add(sandwich);
+                JSONObject ingredientsObject = new JSONArray(ingredientsArray.getJSONObject(i).toString());
+            }
+
+
+               //Sandwich sandwich = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
+               // sandwiches.add(sandwich);
 
 
             } catch(JSONException e){
