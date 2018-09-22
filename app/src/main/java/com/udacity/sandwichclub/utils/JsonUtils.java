@@ -34,8 +34,7 @@ public class JsonUtils {
     public JsonUtils() {
     }
 
-    public static Sandwich parseSandwichJson(String json)
-    {
+    public static Sandwich parseSandwichJson(String json) {
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(json)) {
             return null;
@@ -45,14 +44,17 @@ public class JsonUtils {
             // Create a JSONObject from the JSON file
             JSONObject jsonObject = new JSONObject(json);
 
-           //fetch JSONObject named name
+            //fetch JSONObject named name
             JSONObject objectName = jsonObject.getJSONObject("name");
 
-                // Extract the value for the key called "main_name"
-                String mainName = objectName.getString(KEY_MAIN_NAME);
+            // Extract the value for the key called "main_name"
+            String mainName = objectName.getString(KEY_MAIN_NAME);
 
-                List<Sandwich> alsoKnownAs = new ArrayList<>();
-                JSONArray alsoKnownAsArray = objectName.getJSONArray(KEY_ALSO_KNOWN_AS);
+            JSONArray alsoKnownAsArray = objectName.getJSONArray(KEY_ALSO_KNOWN_AS);
+            for (int i = 0; i < (alsoKnownAsArray.length()); i++) {
+
+                JSONObject alsoKnownObject = new JSONArray(alsoKnownAsArray.getJSONObject(i).toString();
+            }
 
                 String placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
 
@@ -63,17 +65,17 @@ public class JsonUtils {
                 List<Sandwich> ingredients = new ArrayList<>();
                 JSONArray ingredientsArray = objectName.getJSONArray(KEY_INGREDIENTS);
 
-                Sandwich sandwich = new Sandwich(mainName,alsoKnownAs, placeOfOrigin, description, image,ingredients);
+                Sandwich sandwich = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
                 sandwiches.add(sandwich);
 
 
-        } catch (JSONException e) {
-            // If an error is thrown when executing any of the above statements in the "try" block,
-            // catch the exception here, so the app doesn't crash. Print a log message
-            // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
-        }
+            } catch(JSONException e){
+                // If an error is thrown when executing any of the above statements in the "try" block,
+                // catch the exception here, so the app doesn't crash. Print a log message
+                // with the message from the exception.
+                Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
+            }
             // Return the list of sandwiches
-        return json;
+            return json;
+        }
     }
-}
