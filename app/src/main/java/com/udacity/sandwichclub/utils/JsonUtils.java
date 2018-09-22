@@ -39,6 +39,7 @@ public class JsonUtils {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
+
         try {
 
             // Create a JSONObject from the JSON file
@@ -80,6 +81,6 @@ public class JsonUtils {
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
         }
         // Return the list of sandwiches
-        return json;
+        return sandwiches;
     }
 }
