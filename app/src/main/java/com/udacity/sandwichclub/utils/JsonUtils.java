@@ -40,40 +40,31 @@ public class JsonUtils {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
-        ArrayList<Sandwich> sandwiches= new ArrayList<>();
         try {
 
-            // Create a JSONObject from the JSON response string
-            JSONObject baseJsonResponse = new JSONObject(json);
+            // Create a JSONObject from the JSON file
+            JSONObject jsonObject = new JSONObject(json);
 
-            // Extract the JSONArray associated with the key called "name",
-            // which represents a list of features (or sandwiches).
-            JSONArray sandwichArray = baseJsonResponse.getJSONArray("name");
-
-            for (int i = 0; i < sandwichArray.length(); i++) {
-
-                // Get a single sandwich description at position i within the list of sandwiches
-                JSONObject currentSandwich = sandwichArray.getJSONObject(i);
+           //fetch JSONObject named name
+            JSONObject objectName = jsonObject.getJSONObject("name");
 
                 // Extract the value for the key called "main_name"
-                String mainName = currentSandwich.getString(KEY_MAIN_NAME);
+                String mainName = objectName.getString(KEY_MAIN_NAME);
 
                 List<Sandwich> alsoKnownAs = new ArrayList<>();
-                JSONArray alsoKnownAsArray = currentSandwich.getJSONArray(KEY_ALSO_KNOWN_AS);
+                JSONArray alsoKnownAsArray = objectName.getJSONArray(KEY_ALSO_KNOWN_AS);
 
-                String placeOfOrigin = currentSandwich.getString(KEY_PLACE_OF_ORIGIN);
+                String placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
 
-                String description = currentSandwich.getString(KEY_DESCRIPTION);
+                String description = objectName.getString(KEY_DESCRIPTION);
 
-                String image = currentSandwich.getString(KEY_IMAGE);
+                String image = objectName.getString(KEY_IMAGE);
 
                 List<Sandwich> ingredients = new ArrayList<>();
-                JSONArray ingredientsArray = currentSandwich.getJSONArray(KEY_INGREDIENTS);
+                JSONArray ingredientsArray = objectName.getJSONArray(KEY_INGREDIENTS);
 
                 Sandwich sandwich = new Sandwich(mainName,alsoKnownAs, placeOfOrigin, description, image,ingredients);
                 sandwiches.add(sandwich);
-
-            }
 
 
         } catch (JSONException e) {
@@ -83,6 +74,6 @@ public class JsonUtils {
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
         }
             // Return the list of sandwiches
-        return sandwiches;
+        return json;
     }
 }
