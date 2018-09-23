@@ -56,9 +56,10 @@ public class JsonUtils {
             }
 
             JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
+            ArrayList<String> alsoKnownData = new ArrayList();
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
+                alsoKnownData.add(alsoKnownAsArray.getString(i));
 
-                JSONObject alsoKnownObject = new JSONObject(alsoKnownAsArray.get(i).toString());
             }
 
             String placeOfOrigin = "";
@@ -76,15 +77,16 @@ public class JsonUtils {
                 image = objectName.getString(KEY_IMAGE);
             }
 
-            List<Sandwich> ingredientsData = new ArrayList<>();
+            //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364
             JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
-            for (int i = 0; i < ingredientsArray.length(); i++) {
-
-                ingredientsData.add(new Sandwich());
-
+            ArrayList<String> ingredientsData = new ArrayList();
+            if (ingredientsArray != null) {
+                for (int i = 0; i < ingredientsArray.length(); i++) {
+                    ingredientsData.add(ingredientsArray.getString(i));
+                }
             }
 
-            Sandwich sandwich= new Sandwich(mainName, alsoKnownAsArray, placeOfOrigin, description, image, ingredientsArray);
+            Sandwich sandwich = new Sandwich(mainName, alsoKnownAsArray, placeOfOrigin, description, image, ingredientsArray);
             sandwiches.add(sandwich);
 
 
