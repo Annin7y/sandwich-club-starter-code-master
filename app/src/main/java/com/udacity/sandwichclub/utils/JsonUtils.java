@@ -56,7 +56,7 @@ public class JsonUtils {
             }
 
             JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
-            ArrayList<String> alsoKnownData = new ArrayList();
+            List<String> alsoKnownData = new ArrayList();
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
                 alsoKnownData.add(alsoKnownAsArray.getString(i));
 
@@ -79,7 +79,7 @@ public class JsonUtils {
 
             //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364
             JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
-            ArrayList<String> ingredientsData = new ArrayList();
+            List<String> ingredientsData = new ArrayList<String>();
             if (ingredientsArray != null) {
                 for (int i = 0; i < ingredientsArray.length(); i++) {
                     ingredientsData.add(ingredientsArray.getString(i));
