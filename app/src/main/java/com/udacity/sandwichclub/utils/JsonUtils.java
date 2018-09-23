@@ -76,10 +76,12 @@ public class JsonUtils {
                 image = objectName.getString(KEY_IMAGE);
             }
 
+            List<Sandwich> ingredientsData = new ArrayList<>();
             JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
             for (int i = 0; i < ingredientsArray.length(); i++) {
 
-               JSONObject ingredientsObject = new JSONObject(ingredientsArray.get(i).toString());
+                ingredientsData.add(new Sandwich());
+
             }
 
             Sandwich sandwich= new Sandwich(mainName, alsoKnownAsArray, placeOfOrigin, description, image, ingredientsArray);
