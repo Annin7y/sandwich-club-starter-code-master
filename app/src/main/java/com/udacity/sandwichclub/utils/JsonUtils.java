@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class JsonUtils {
@@ -52,29 +53,29 @@ public class JsonUtils {
             // Extract the value for the key called "main_name"
             String mainName = "";
             if (objectName.has("mainName")) {
-                mainName = objectName.getString(KEY_MAIN_NAME);
+                mainName = objectName.optString(KEY_MAIN_NAME);
             }
 
             JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
             List<String> alsoKnownData = new ArrayList();
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
-                alsoKnownData.add(alsoKnownAsArray.getString(i));
+               alsoKnownData.add(alsoKnownAsArray.getString(i));
 
             }
 
             String placeOfOrigin = "";
             if (objectName.has("placeOfOrigin")) {
-                placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
+                placeOfOrigin = objectName.optString(KEY_PLACE_OF_ORIGIN);
             }
 
             String description = "";
             if (objectName.has("description")) {
-                description = objectName.getString(KEY_DESCRIPTION);
+                description = objectName.optString(KEY_DESCRIPTION);
             }
 
             String image = "";
             if (objectName.has("image")) {
-                image = objectName.getString(KEY_IMAGE);
+                image = objectName.optString(KEY_IMAGE);
             }
 
             //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364
