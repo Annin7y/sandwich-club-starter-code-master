@@ -19,11 +19,11 @@ public class JsonUtils {
      */
     private static final String LOG_TAG = JsonUtils.class.getSimpleName();
 
-    private static final String KEY_MAIN_NAME = "main_name";
+    private static final String KEY_MAIN_NAME = "mainName";
 
-    private static final String KEY_ALSO_KNOWN_AS = "also_known_as";
+    private static final String KEY_ALSO_KNOWN_AS = "alsoKnownAs";
 
-    private static final String KEY_PLACE_OF_ORIGIN = "place_of_origin";
+    private static final String KEY_PLACE_OF_ORIGIN = "placeOfOrigin";
 
     private static final String KEY_DESCRIPTION = "description";
 
@@ -51,7 +51,7 @@ public class JsonUtils {
 
             // Extract the value for the key called "main_name"
             String mainName = "";
-            if (objectName.has("main_name")) {
+            if (objectName.has("mainName")) {
                 mainName = objectName.getString(KEY_MAIN_NAME);
             }
 
@@ -63,7 +63,7 @@ public class JsonUtils {
             }
 
             String placeOfOrigin = "";
-            if (objectName.has("place_of_origin")) {
+            if (objectName.has("placeOfOrigin")) {
                 placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
             }
 
