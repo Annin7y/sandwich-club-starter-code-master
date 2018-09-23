@@ -40,6 +40,7 @@ public class JsonUtils {
             return null;
         }
 
+        Sandwich sandwiches = null;
         try {
 
             // Create a JSONObject from the JSON file
@@ -49,7 +50,10 @@ public class JsonUtils {
             JSONObject objectName = jsonObject.getJSONObject("name");
 
             // Extract the value for the key called "main_name"
-            String mainName = objectName.getString(KEY_MAIN_NAME);
+            String mainName = "";
+            if (objectName.has("main_name")) {
+                mainName = objectName.getString(KEY_MAIN_NAME);
+            }
 
             JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
@@ -57,19 +61,28 @@ public class JsonUtils {
                 JSONObject alsoKnownObject = new JSONObject(alsoKnownAsArray.get(i).toString());
             }
 
-            String placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
+            String placeOfOrigin = "";
+            if (objectName.has("place_of_origin")) {
+                placeOfOrigin = objectName.getString(KEY_PLACE_OF_ORIGIN);
+            }
 
-            String description = objectName.getString(KEY_DESCRIPTION);
+            String description = "";
+            if (objectName.has("description")) {
+                description = objectName.getString(KEY_DESCRIPTION);
+            }
 
-            String image = objectName.getString(KEY_IMAGE);
+            String image = "";
+            if (objectName.has("image")) {
+                image = objectName.getString(KEY_IMAGE);
+            }
 
             JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
             for (int i = 0; i < ingredientsArray.length(); i++) {
 
-                JSONObject ingredientsObject = new JSONObject(ingredientsArray.get(i).toString());
+               JSONObject ingredientsObject = new JSONObject(ingredientsArray.get(i).toString());
             }
 
-            Sandwich sandwich = new Sandwich(mainName, alsoKnownAsArray, placeOfOrigin, description, image, ingredientsArray);
+            Sandwich sandwich= new Sandwich(mainName, alsoKnownAsArray, placeOfOrigin, description, image, ingredientsArray);
             sandwiches.add(sandwich);
 
 
