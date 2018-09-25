@@ -40,8 +40,6 @@ public class JsonUtils {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
-
-        Sandwich sandwiches = null;
         try {
 
             // Create a JSONObject from the JSON file
@@ -60,7 +58,6 @@ public class JsonUtils {
             List<String> alsoKnownData = new ArrayList();
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
                 alsoKnownData.add(alsoKnownAsArray.getString(i));
-
             }
 
             String placeOfOrigin = "";
@@ -89,7 +86,7 @@ public class JsonUtils {
             }
 
             Sandwich sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
-            
+
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
@@ -97,6 +94,6 @@ public class JsonUtils {
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
         }
         // Return the list of sandwiches
-        return sandwiches;
+         return sandwich;
     }
 }
