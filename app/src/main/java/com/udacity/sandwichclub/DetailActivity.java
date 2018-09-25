@@ -15,6 +15,9 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+    Sandwich sandwich;
+    ImageView ingredientsIv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +47,9 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         populateUI();
-        Picasso.with(this)
-                .load(sandwich.getImage())
-                .into(ingredientsIv);
+//        Picasso.with(this)
+//                .load(sandwich.getImage())
+//                .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
     }
