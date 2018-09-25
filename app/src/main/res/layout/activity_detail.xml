@@ -20,7 +20,8 @@
     <TextView
         android:id="@+id/origin_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/detail_ingredients_label"/>
 
     <TextView
         android:layout_width="wrap_content"
