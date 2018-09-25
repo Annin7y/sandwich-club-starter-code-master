@@ -40,7 +40,7 @@ public class JsonUtils {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
-
+        Sandwich sandwich = null;
         try {
 
             // Create a JSONObject from the JSON file
@@ -62,12 +62,12 @@ public class JsonUtils {
             }
 
             String placeOfOrigin = "";
-            if (objectName.has("placeOfOrigin")) {
-                placeOfOrigin = objectName.optString(KEY_PLACE_OF_ORIGIN);
+            if (jsonObject.has("placeOfOrigin")) {
+                placeOfOrigin = jsonObject.optString(KEY_PLACE_OF_ORIGIN);
             }
 
             String description = "";
-            if (objectName.has("description")) {
+            if (jsonObject.has("description")) {
                 description = objectName.optString(KEY_DESCRIPTION);
             }
 
@@ -77,7 +77,7 @@ public class JsonUtils {
             }
 
             //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364
-            JSONArray ingredientsArray = objectName.optJSONArray(KEY_INGREDIENTS);
+            JSONArray ingredientsArray = jsonObject.optJSONArray(KEY_INGREDIENTS);
             List<String> ingredientsData = new ArrayList<String>();
             if (ingredientsArray != null) {
                 for (int i = 0; i < ingredientsArray.length(); i++) {
@@ -86,17 +86,17 @@ public class JsonUtils {
                 }
             }
 
-            Sandwich sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
+            sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
 
             // Return the list of sandwiches
-            return sandwich;
+          //  return sandwich;
 
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
-             return null;
+            // return null;
         }
-
+        return sandwich;
     }}
