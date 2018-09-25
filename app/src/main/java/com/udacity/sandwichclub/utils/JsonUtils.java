@@ -83,7 +83,8 @@ public class JsonUtils {
                 for (int i = 0; i < ingredientsArray.length(); i++) {
                     //JSONObject jsonIngredientObject = ingredientsArray.getJSONObject(i);
                     ingredientsData.add(ingredientsArray.getString(i));
-            }}
+                }
+            }
 
             Sandwich sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
 
@@ -95,8 +96,7 @@ public class JsonUtils {
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
-           // return null;
+             return null;
         }
-        return null;
-    }
-}
+
+    }}
