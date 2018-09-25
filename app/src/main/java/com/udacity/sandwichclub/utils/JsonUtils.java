@@ -55,8 +55,8 @@ public class JsonUtils {
                 mainName = objectName.optString(KEY_MAIN_NAME);
             }
 
-            JSONArray alsoKnownAsArray = jsonObject.optJSONArray(KEY_ALSO_KNOWN_AS);
-            List<String> alsoKnownData = new ArrayList<String>(alsoKnownAsArray.length());
+            JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
+            List<String> alsoKnownData = new ArrayList<String>();
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
                 alsoKnownData.add(alsoKnownAsArray.getString(i));
             }
@@ -68,12 +68,12 @@ public class JsonUtils {
 
             String description = "";
             if (jsonObject.has("description")) {
-                description = objectName.optString(KEY_DESCRIPTION);
+                description = jsonObject.optString(KEY_DESCRIPTION);
             }
 
             String image = "";
-            if (objectName.has("image")) {
-                image = objectName.optString(KEY_IMAGE);
+            if (jsonObject.has("image")) {
+                image = jsonObject.optString(KEY_IMAGE);
             }
 
             //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364

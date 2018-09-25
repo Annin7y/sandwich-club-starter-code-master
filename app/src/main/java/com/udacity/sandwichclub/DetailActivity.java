@@ -51,9 +51,9 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         populateUI();
-//        Picasso.with(this)
-//                .load(sandwich.getImage())
-//                .into(ingredientsIv);
+        Picasso.with(this)
+                .load(sandwich.getImage())
+                .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
     }
@@ -64,7 +64,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
-       placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
+     //  placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
 
 //        TextView description = (TextView) findViewById(R.id.description_tv);
 //        description.setText(sandwich.getDescription());
