@@ -55,7 +55,7 @@ public class JsonUtils {
                 mainName = objectName.optString(KEY_MAIN_NAME);
             }
 
-            JSONArray alsoKnownAsArray = objectName.optJSONArray(KEY_ALSO_KNOWN_AS);
+            JSONArray alsoKnownAsArray = jsonObject.optJSONArray(KEY_ALSO_KNOWN_AS);
             List<String> alsoKnownData = new ArrayList<String>(alsoKnownAsArray.length());
             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
                 alsoKnownData.add(alsoKnownAsArray.getString(i));
