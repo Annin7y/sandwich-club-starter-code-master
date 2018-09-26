@@ -40,7 +40,7 @@ public class JsonUtils {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
-     //   Sandwich sandwich = null;
+        Sandwich sandwich = null;
         try {
 
             // Create a JSONObject from the JSON file
@@ -86,10 +86,10 @@ public class JsonUtils {
                 }
             }
 
-           Sandwich sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
+            sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
 
             // Return the list of sandwiches
-           return sandwich;
+          // return sandwich;
 
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
@@ -98,5 +98,5 @@ public class JsonUtils {
             Log.e("QueryUtils", "Problem parsing sandwich JSON results", e);
             // return null;
         }
-        return null;
+        return sandwich;
     }}

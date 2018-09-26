@@ -19,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
     Sandwich sandwich;
     ImageView ingredientsIv;
     TextView placeOfOrigin;
+    TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,9 @@ public class DetailActivity extends AppCompatActivity {
         ingredientsIv = findViewById(R.id.image_iv);
 
         placeOfOrigin = (TextView) findViewById(R.id.origin_tv);
+
+        description = (TextView) findViewById(R.id.description_tv);
+
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -56,6 +60,7 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
+        description.setText(sandwich.getDescription());
     }
 
     private void closeOnError() {
@@ -64,10 +69,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
-     //  placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
+//       placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
 
-//        TextView description = (TextView) findViewById(R.id.description_tv);
-//        description.setText(sandwich.getDescription());
+      //  description.setText(sandwich.getDescription());
 
     }
 }
