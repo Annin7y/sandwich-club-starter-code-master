@@ -77,10 +77,21 @@ public class DetailActivity extends AppCompatActivity {
        description.setText(sandwich.getDescription());
 
         /**
-         * Set the ingredients array into a single TextView
+         * Set the ingredients array into a single TextView using StringBuilder
+         * The code structure below is based on the answer given in this thread:
+         * https://stackoverflow.com/questions/17313495/how-to-display-multiline-from-array-list-in-single-textview
          */
+        StringBuilder builder = new StringBuilder();
+        for (String ingredientString : sandwich.getIngredients()) {
+            builder.append(ingredientString + "\n");
+        }
+        ingredients.setText(builder.toString());
 
-     //  ingredients.setText(sandwich.getIngredients()));
 
+        for(String alsoKnownString : sandwich.getAlsoKnownAs()) {
+        builder.append(alsoKnownString + "\n");
     }
+        alsoKnownAs.setText(builder.toString());
+}
+
 }
