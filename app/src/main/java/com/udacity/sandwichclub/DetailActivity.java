@@ -12,7 +12,8 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity
+{
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
@@ -24,7 +25,8 @@ public class DetailActivity extends AppCompatActivity {
     TextView ingredients;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
@@ -39,12 +41,14 @@ public class DetailActivity extends AppCompatActivity {
         ingredients = (TextView) findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
-        if (intent == null) {
+        if (intent == null)
+        {
             closeOnError();
         }
 
         int position = intent.getIntExtra(EXTRA_POSITION, DEFAULT_POSITION);
-        if (position == DEFAULT_POSITION) {
+        if (position == DEFAULT_POSITION)
+        {
             // EXTRA_POSITION not found in intent
             closeOnError();
             return;
@@ -53,7 +57,8 @@ public class DetailActivity extends AppCompatActivity {
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
         Sandwich sandwich = JsonUtils.parseSandwichJson(json);
-        if (sandwich == null) {
+        if (sandwich == null)
+        {
             // Sandwich data unavailable
             closeOnError();
             return;
@@ -67,31 +72,32 @@ public class DetailActivity extends AppCompatActivity {
         setTitle(sandwich.getMainName());
     }
 
-    private void closeOnError() {
+    private void closeOnError()
+    {
         finish();
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI(Sandwich sandwich) {
-       placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
-       description.setText(sandwich.getDescription());
+    private void populateUI(Sandwich sandwich)
+    {
+     //  placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
+     //  description.setText(sandwich.getDescription());
 
         /**
          * Set the ingredients array into a single TextView using StringBuilder
          * The code structure below is based on the answer given in this thread:
          * https://stackoverflow.com/questions/17313495/how-to-display-multiline-from-array-list-in-single-textview
          */
-        StringBuilder builder = new StringBuilder();
-        for (String ingredientString : sandwich.getIngredients()) {
-            builder.append(ingredientString + "\n");
-        }
-        ingredients.setText(builder.toString());
-
-
-        for(String alsoKnownString : sandwich.getAlsoKnownAs()) {
-        builder.append(alsoKnownString + "\n");
-    }
-        alsoKnownAs.setText(builder.toString());
+//        StringBuilder builder = new StringBuilder();
+//        for (String ingredientString : sandwich.getIngredients()) {
+//            builder.append(ingredientString + "\n");
+//        }
+//        ingredients.setText(builder.toString());
+//
+//
+//        for(String alsoKnownString : sandwich.getAlsoKnownAs()) {
+//        builder.append(alsoKnownString + "\n");
+//    }
+//        alsoKnownAs.setText(builder.toString());
 }
-
 }
