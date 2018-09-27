@@ -1,5 +1,9 @@
 # Sandwich Club Project Starter Code
 
+Screenshot of the detail activity attached below as well as the instructions written by Udacity instructors.
+
+## Screenshots
+
 ## Project Overview
 In this project, you will complete the **Sandwich Club** app to
 show the details of each sandwich once it is selected.
