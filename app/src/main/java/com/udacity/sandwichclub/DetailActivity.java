@@ -30,13 +30,9 @@ public class DetailActivity extends AppCompatActivity
         setContentView(R.layout.activity_detail);
 
         ingredientsIv = findViewById(R.id.image_iv);
-
         placeOfOrigin = (TextView) findViewById(R.id.origin_tv);
-
         description = (TextView) findViewById(R.id.description_tv);
-
         alsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
-
         ingredients = (TextView) findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
@@ -63,13 +59,16 @@ public class DetailActivity extends AppCompatActivity
             return;
         }
 
-    //    populateUI(sandwich);
-        Picasso.with(this)
-                .load(sandwich.getImage())
-                .into(ingredientsIv);
+        populateUI(sandwich);
 
-        setTitle(sandwich.getMainName());
-    }
+       Picasso.with(this)
+               .load(sandwich.getImage())
+
+               //if the image can't be loaded the following error message/image will be displayed
+               //error image added to the drawable folder
+               .error(R.drawable.user_placeholder_error)
+               .into(ingredientsIv);
+   }
 
     private void closeOnError()
     {
@@ -79,24 +78,49 @@ public class DetailActivity extends AppCompatActivity
 
     private void populateUI(Sandwich sandwich)
     {
-     //  placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
-     //  description.setText(sandwich.getDescription());
+       placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
 
-        //
-        // Set the ingredients array into a single TextView using StringBuilder
+       // if the strings are empty, show a toast message for each string
+       // The code structure below is based on the answers given in this thread:
+       // https://stackoverflow.com/questions/46040636/check-if-textview-is-empty
+       if(placeOfOrigin.getText().toString().equals(""))
+       {
+           Toast.makeText(DetailActivity.this, R.string.empty_origin, Toast.LENGTH_SHORT).show();
+       }
+
+        description.setText(sandwich.getDescription());
+
+        if(description.getText().toString().equals(""))
+        {
+            Toast.makeText(DetailActivity.this, R.string.empty_description, Toast.LENGTH_SHORT).show();
+        }
+
+        // Set the ingredients & alsoKnownAs arrays into single TextViews using StringBuilder
         // The code structure below is based on the answer given in this thread:
         // https://stackoverflow.com/questions/17313495/how-to-display-multiline-from-array-list-in-single-textview
-       //
-//        StringBuilder builder = new StringBuilder();
-//        for (String ingredientString : sandwich.getIngredients()) {
-//            builder.append(ingredientString + "\n");
-//        }
-//        ingredients.setText(builder.toString());
-//
-//
-//        for(String alsoKnownString : sandwich.getAlsoKnownAs()) {
-//        builder.append(alsoKnownString + "\n");
-//    }
-//        alsoKnownAs.setText(builder.toString());
+        StringBuilder builder = new StringBuilder();
+        for (String ingredientString : sandwich.getIngredients())
+        {
+            builder.append(ingredientString + "\n");
+        }
+
+        ingredients.setText(builder.toString());
+
+        if(ingredients.getText().toString().equals(""))
+        {
+            Toast.makeText(DetailActivity.this, R.string.empty_ingredients, Toast.LENGTH_SHORT).show();
+        }
+
+        StringBuilder builder2 = new StringBuilder();
+        for(String alsoKnownString : sandwich.getAlsoKnownAs())
+        {
+        builder2.append(alsoKnownString + "\n");
+        }
+        alsoKnownAs.setText(builder2.toString());
+
+        if(alsoKnownAs.getText().toString().equals(""))
+        {
+            Toast.makeText(DetailActivity.this, R.string.empty_also_known, Toast.LENGTH_SHORT).show();
+        }
 }
 }

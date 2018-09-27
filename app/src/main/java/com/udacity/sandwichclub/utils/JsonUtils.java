@@ -80,7 +80,7 @@ public class JsonUtils
                 image = jsonObject.optString(KEY_IMAGE);
             }
 
-            //The JSON paring code structure below is based on the answers given in this stackoverflow thread
+            //The JSON parsing code structure below is based on the answers given in this stackoverflow thread
             //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364
             JSONArray ingredientsArray = jsonObject.optJSONArray(KEY_INGREDIENTS);
             List<String> ingredientsData = new ArrayList<String>();
@@ -88,7 +88,6 @@ public class JsonUtils
             {
                 for (int i = 0; i < ingredientsArray.length(); i++)
                 {
-                    //JSONObject jsonIngredientObject = ingredientsArray.getJSONObject(i);
                     ingredientsData.add(ingredientsArray.getString(i));
                 }
             }
