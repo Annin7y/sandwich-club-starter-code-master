@@ -10,7 +10,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class JsonUtils
@@ -81,6 +80,7 @@ public class JsonUtils
                 image = jsonObject.optString(KEY_IMAGE);
             }
 
+            //The JSON paring code structure below is based on the answers given in this stackoverflow thread
             //https://stackoverflow.com/questions/17037340/converting-jsonarray-to-arraylist/17037364
             JSONArray ingredientsArray = jsonObject.optJSONArray(KEY_INGREDIENTS);
             List<String> ingredientsData = new ArrayList<String>();
@@ -95,16 +95,15 @@ public class JsonUtils
 
             sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
 
-            // Return the list of sandwiches
-          // return sandwich;
-
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
             Log.e("QueryUtils", "Problem parsing movies JSON results", e);
-            // return null;
+
         }
+        // Return the list of sandwiches
         return sandwich;
     }
 }

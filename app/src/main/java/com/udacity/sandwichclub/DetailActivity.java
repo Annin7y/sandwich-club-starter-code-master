@@ -14,7 +14,6 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 public class DetailActivity extends AppCompatActivity
 {
-
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
@@ -64,7 +63,7 @@ public class DetailActivity extends AppCompatActivity
             return;
         }
 
-        populateUI(sandwich);
+    //    populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -83,11 +82,11 @@ public class DetailActivity extends AppCompatActivity
      //  placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
      //  description.setText(sandwich.getDescription());
 
-        /**
-         * Set the ingredients array into a single TextView using StringBuilder
-         * The code structure below is based on the answer given in this thread:
-         * https://stackoverflow.com/questions/17313495/how-to-display-multiline-from-array-list-in-single-textview
-         */
+        //
+        // Set the ingredients array into a single TextView using StringBuilder
+        // The code structure below is based on the answer given in this thread:
+        // https://stackoverflow.com/questions/17313495/how-to-display-multiline-from-array-list-in-single-textview
+       //
 //        StringBuilder builder = new StringBuilder();
 //        for (String ingredientString : sandwich.getIngredients()) {
 //            builder.append(ingredientString + "\n");
