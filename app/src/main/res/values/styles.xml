@@ -15,7 +15,7 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">17sp</item>
-        <item name="android:padding">3dp</item>
+
     </style>
 
     <!-- Description label and list settings in activity_detail -->
