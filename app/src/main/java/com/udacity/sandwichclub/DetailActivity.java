@@ -80,19 +80,19 @@ public class DetailActivity extends AppCompatActivity
     {
        placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
 
-       // if the strings are empty, show a toast message for each string
+       // if the strings are empty, the text will be set to "No data"
        // The code structure below is based on the answers given in this thread:
        // https://stackoverflow.com/questions/46040636/check-if-textview-is-empty
        if(placeOfOrigin.getText().toString().equals(""))
        {
-           Toast.makeText(DetailActivity.this, R.string.empty_origin, Toast.LENGTH_SHORT).show();
+           placeOfOrigin.setText(R.string.no_data);
        }
 
         description.setText(sandwich.getDescription());
 
         if(description.getText().toString().equals(""))
         {
-            Toast.makeText(DetailActivity.this, R.string.empty_description, Toast.LENGTH_SHORT).show();
+            description.setText(R.string.no_data);
         }
 
         // Set the ingredients & alsoKnownAs arrays into single TextViews using StringBuilder
@@ -108,7 +108,7 @@ public class DetailActivity extends AppCompatActivity
 
         if(ingredients.getText().toString().equals(""))
         {
-            Toast.makeText(DetailActivity.this, R.string.empty_ingredients, Toast.LENGTH_SHORT).show();
+            ingredients.setText(R.string.no_data);
         }
 
         StringBuilder builder2 = new StringBuilder();
@@ -120,7 +120,7 @@ public class DetailActivity extends AppCompatActivity
 
         if(alsoKnownAs.getText().toString().equals(""))
         {
-            Toast.makeText(DetailActivity.this, R.string.empty_also_known, Toast.LENGTH_SHORT).show();
+            alsoKnownAs.setText(R.string.no_data);
         }
 }
 }

@@ -25,6 +25,19 @@
             android:padding="@dimen/image_padding"
             android:scaleType="centerCrop" />
 
+        <LinearLayout
+            android:id="@+id/linear_layout_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/image_iv" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_horizontal_also"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/image_iv" >
         <TextView
             android:id="@+id/also_known_tv_label"
             style="@style/DetailLabelStyle"
@@ -112,6 +125,6 @@
             android:layout_marginStart="@dimen/also_list_margin_start"
             android:layout_toRightOf="@+id/ingredients_tv_title"
             />
-
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>
