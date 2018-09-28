@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -15,116 +15,104 @@
             android:id="@+id/image_iv"
             android:layout_width="@dimen/image_width"
             android:layout_height="@dimen/image_height"
-            android:layout_marginEnd="@dimen/image_margin_end"
-            android:layout_marginLeft="@dimen/image_margin_left"
-            android:layout_marginRight="@dimen/image_margin_right"
             android:layout_marginStart="@dimen/image_margin_start"
+            android:layout_marginLeft="@dimen/image_margin_left"
             android:layout_marginTop="@dimen/image_margin_top"
+            android:layout_marginEnd="@dimen/image_margin_end"
+            android:layout_marginRight="@dimen/image_margin_right"
             android:adjustViewBounds="true"
             android:contentDescription="@string/sandwich_picture_content_description"
             android:padding="@dimen/image_padding"
             android:scaleType="centerCrop" />
 
         <LinearLayout
-            android:id="@+id/linear_layout_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@+id/image_iv" />
+            android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/linear_layout_horizontal_also"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/image_iv" >
-        <TextView
-            android:id="@+id/also_known_tv_label"
-            style="@style/DetailLabelStyle"
             android:layout_below="@+id/image_iv"
-            android:layout_marginTop="@dimen/also_label_margin_top"
-            android:layout_marginStart="@dimen/label_margin"
-            android:layout_marginLeft="@dimen/label_margin"
-            android:text="@string/detail_also_known_as_label"
-           />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/also_known_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/image_iv"
-            android:layout_marginTop="@dimen/also_list_margin_top"
-            android:layout_toRightOf="@id/also_known_tv_label"
-            android:layout_marginLeft="@dimen/also_list_margin_start"
-            android:layout_marginStart="@dimen/also_list_margin_start"
-            android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/also_known_tv_label"
+                style="@style/DetailLabelStyle"
+                android:layout_marginStart="@dimen/label_margin"
+                android:layout_marginLeft="@dimen/label_margin"
+                android:layout_marginTop="@dimen/also_label_margin_top"
+                android:text="@string/detail_also_known_as_label" />
 
-        <TextView
-            android:id="@+id/origin_tv_label"
-            style="@style/DetailLabelStyle"
-            android:layout_below="@+id/also_known_tv_label"
-            android:layout_marginTop="@dimen/origin_label_top"
-            android:layout_marginStart="@dimen/label_margin"
-            android:layout_marginLeft="@dimen/label_margin"
-            android:text="@string/detail_place_of_origin_label"
-            />
+            <TextView
+                android:id="@+id/also_known_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
 
-        <TextView
-            android:id="@+id/origin_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/also_known_tv_label"
-            android:layout_marginTop="@dimen/origin_list_top"
-            android:layout_toRightOf="@id/origin_tv_label"
-            android:layout_marginRight="@dimen/list_origin_right"
-            android:layout_marginLeft="@dimen/also_list_margin_start"
-            android:layout_marginStart="@dimen/also_list_margin_start"
-            android:text="@string/detail_ingredients_label"
-            />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/description_tv_label"
-            style="@style/DetailLabelStyle"
-            android:layout_below="@+id/origin_tv_label"
-            android:layout_marginTop="@dimen/description_label_top"
-            android:layout_marginStart="@dimen/label_margin"
-            android:layout_marginLeft="@dimen/label_margin"
-            android:text="@string/detail_description_label"
-            />
+            <TextView
+                android:id="@+id/origin_tv_label"
+                style="@style/DetailLabelStyle"
+                android:layout_below="@+id/also_known_tv_label"
+                android:layout_marginStart="@dimen/label_margin"
+                android:layout_marginLeft="@dimen/label_margin"
+                android:layout_marginTop="@dimen/origin_label_top"
+                android:text="@string/detail_place_of_origin_label" />
 
-        <TextView
-            android:id="@+id/description_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/description_list_top"
-            android:layout_marginLeft="@dimen/also_list_margin_start"
-            android:layout_marginStart="@dimen/also_list_margin_start"
-            android:layout_below="@+id/origin_tv_label"
-            android:layout_toRightOf="@id/description_tv_label"
-            android:layout_marginRight="@dimen/description_list_right"
-            />
+            <TextView
+                android:id="@+id/origin_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/also_known_tv_label"
+                android:layout_marginStart="@dimen/also_list_margin_start"
+                android:layout_marginLeft="@dimen/also_list_margin_start"
+                android:layout_marginTop="@dimen/origin_list_top"
+                android:layout_marginRight="@dimen/list_origin_right"
+                android:layout_toRightOf="@id/origin_tv_label"
+                android:text="@string/detail_ingredients_label" />
 
-        <TextView
-            android:id="@+id/ingredients_tv_title"
-            style="@style/DetailLabelStyle"
-            android:layout_below="@+id/description_tv_label"
-            android:layout_marginTop="@dimen/ingredients_label_top"
-            android:layout_marginStart="@dimen/label_margin"
-            android:layout_marginLeft="@dimen/label_margin"
-            android:text="@string/detail_ingredients_label"
-           />
+            <TextView
+                android:id="@+id/description_tv_label"
+                style="@style/DetailLabelStyle"
+                android:layout_below="@+id/origin_tv_label"
+                android:layout_marginStart="@dimen/label_margin"
+                android:layout_marginLeft="@dimen/label_margin"
+                android:layout_marginTop="@dimen/description_label_top"
+                android:text="@string/detail_description_label" />
 
-        <TextView
-            android:id="@+id/ingredients_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/description_tv_label"
-            android:layout_marginTop="@dimen/ingredients_list_top"
-            android:layout_marginLeft="@dimen/also_list_margin_start"
-            android:layout_marginRight="@dimen/ingredients_list_right"
-            android:layout_marginStart="@dimen/also_list_margin_start"
-            android:layout_toRightOf="@+id/ingredients_tv_title"
-            />
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/origin_tv_label"
+                android:layout_marginStart="@dimen/also_list_margin_start"
+                android:layout_marginLeft="@dimen/also_list_margin_start"
+                android:layout_marginTop="@dimen/description_list_top"
+                android:layout_marginRight="@dimen/description_list_right"
+                android:layout_toRightOf="@id/description_tv_label" />
+
+            <TextView
+                android:id="@+id/ingredients_tv_title"
+                style="@style/DetailLabelStyle"
+                android:layout_below="@+id/description_tv_label"
+                android:layout_marginStart="@dimen/label_margin"
+                android:layout_marginLeft="@dimen/label_margin"
+                android:layout_marginTop="@dimen/ingredients_label_top"
+                android:text="@string/detail_ingredients_label" />
+
+            <TextView
+                android:id="@+id/ingredients_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description_tv_label"
+                android:layout_marginStart="@dimen/also_list_margin_start"
+                android:layout_marginLeft="@dimen/also_list_margin_start"
+                android:layout_marginTop="@dimen/ingredients_list_top"
+                android:layout_marginRight="@dimen/ingredients_list_right"
+                android:layout_toRightOf="@+id/ingredients_tv_title" />
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
