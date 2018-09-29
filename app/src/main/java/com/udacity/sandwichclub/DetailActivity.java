@@ -116,6 +116,7 @@ public class DetailActivity extends AppCompatActivity
         {
         builder2.append(alsoKnownString + "\n");
         }
+        
         alsoKnownAs.setText(builder2.toString());
 
         if(alsoKnownAs.getText().toString().equals(""))
