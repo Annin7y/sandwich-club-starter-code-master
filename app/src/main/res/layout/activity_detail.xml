@@ -32,8 +32,8 @@
             android:orientation="vertical" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <TextView
@@ -41,14 +41,13 @@
                 style="@style/DetailLabelStyle"
                 android:layout_marginStart="@dimen/label_margin"
                 android:layout_marginLeft="@dimen/label_margin"
-                android:layout_below="@+id/image_iv"
                 android:text="@string/detail_also_known_as_label" />
 
             <TextView
                 android:id="@+id/also_known_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
+                android:padding="@dimen/list_padding" />
 
         </LinearLayout>
 
@@ -72,7 +71,7 @@
                 android:layout_below="@+id/also_known_tv_label"
                 android:layout_marginStart="@dimen/also_list_margin_start"
                 android:layout_marginLeft="@dimen/also_list_margin_start"
-                android:padding="3dp"
+                android:padding="@dimen/list_padding"
                 android:text="@string/detail_ingredients_label" />
 
         </LinearLayout>
@@ -96,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/also_list_margin_start"
                 android:layout_marginLeft="@dimen/also_list_margin_start"
-                android:layout_weight="3"
+                android:padding="@dimen/list_padding"
                 android:layout_toRightOf="@id/description_tv_label" />
 
         </LinearLayout>
@@ -119,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/also_list_margin_start"
                 android:layout_marginLeft="@dimen/also_list_margin_start"
-                 />
+                android:padding="@dimen/list_padding" />
         </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

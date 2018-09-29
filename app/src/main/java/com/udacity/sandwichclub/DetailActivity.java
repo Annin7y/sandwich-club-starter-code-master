@@ -80,7 +80,7 @@ public class DetailActivity extends AppCompatActivity
     {
        placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
 
-       // if the strings are empty, the text will be set to "No data"
+       // if the strings are empty, the text will be set to "No data found"
        // The code structure below is based on the answers given in this thread:
        // https://stackoverflow.com/questions/46040636/check-if-textview-is-empty
        if(placeOfOrigin.getText().toString().equals(""))
