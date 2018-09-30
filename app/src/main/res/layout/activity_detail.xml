@@ -15,7 +15,6 @@
             android:id="@+id/image_iv"
             android:layout_width="match_parent"
             android:layout_height="@dimen/image_height"
-            android:layout_marginTop="@dimen/image_margin_top"
             android:adjustViewBounds="true"
             android:contentDescription="@string/sandwich_picture_content_description"
             android:padding="@dimen/image_padding"
