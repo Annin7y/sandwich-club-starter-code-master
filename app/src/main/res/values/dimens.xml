@@ -5,12 +5,7 @@
 
     <!-- ImageView settings in activity_detail -->
     <dimen name="label_margin">15dp</dimen>
-    <dimen name="image_width">300dp</dimen>
     <dimen name="image_height">200dp</dimen>
-    <dimen name="image_margin_end">25dp</dimen>
-    <dimen name="image_margin_right">55dp</dimen>
-    <dimen name="image_margin_left">60dp</dimen>
-    <dimen name="image_margin_start">60dp</dimen>
     <dimen name="image_margin_top">45dp</dimen>
     <dimen name="image_padding">2dp</dimen>
 
