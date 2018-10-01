@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -28,22 +29,81 @@
             android:layout_marginStart="@dimen/label_margin"
             android:layout_marginLeft="@dimen/label_margin"
             app:layout_constraintTop_toBottomOf="@+id/image_iv"
-            app:layout_constraintRight_toLeftOf="parent"
-            android:padding="10dp"
+            app:layout_constraintRight_toLeftOf="@id/also_known_tv"
             android:text="@string/detail_also_known_as_label"/>
 
         <TextView
             android:id="@+id/also_known_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/also_known_tv_label"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/also_known_tv_label"
             app:layout_constraintTop_toBottomOf="@+id/image_iv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:gravity="center"
-            android:padding="3dp"
             tools:text="text" />
 
+        <TextView
+            android:id="@+id/origin_tv_label"
+            style="@style/DetailLabelStyle"
+            android:layout_marginStart="@dimen/label_margin"
+            android:layout_marginLeft="@dimen/label_margin"
+            android:text="@string/detail_place_of_origin_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/also_known_tv"
+            />
+
+        <TextView
+            android:id="@+id/origin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/origin_tv_label"
+            app:layout_constraintTop_toBottomOf="@+id/also_known_tv"
+            app:layout_constraintBottom_toTopOf="@+id/description_tv"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintRight_toLeftOf="parent"
+            tools:text="@string/detail_ingredients_label" />
+
+        <TextView
+            android:id="@+id/description_tv_label"
+            style="@style/DetailLabelStyle"
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="@dimen/label_margin"
+            android:layout_marginLeft="@dimen/label_margin"
+            android:text="@string/detail_description_label" />
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/description_tv_label"
+            tools:text="text"/>
+
+        <TextView
+            android:id="@+id/ingredients_tv_label"
+            style="@style/DetailLabelStyle"
+            app:layout_constraintTop_toBottomOf="@+id/description_tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="@dimen/label_margin"
+            android:layout_marginLeft="@dimen/label_margin"
+            android:text="@string/detail_ingredients_label" />
+
+        <TextView
+            android:id="@+id/ingredients_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/description_tv"
+            app:layout_constraintLeft_toRightOf="@+id/ingredients_tv_label"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintRight_toLeftOf="parent"
+            tools:text="text"/>
 
     </android.support.constraint.ConstraintLayout>
 
