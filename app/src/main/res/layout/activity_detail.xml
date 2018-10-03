@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="154dp" />
-        
+
         <TextView
             android:id="@+id/also_known_tv_label"
             style="@style/DetailLabelStyle"
@@ -43,7 +43,6 @@
             android:layout_marginTop="16dp"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="text" />
-
 
     </android.support.constraint.ConstraintLayout>
 
