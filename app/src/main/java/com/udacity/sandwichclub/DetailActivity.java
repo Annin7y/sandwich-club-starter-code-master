@@ -30,7 +30,7 @@ public class DetailActivity extends AppCompatActivity
         setContentView(R.layout.activity_detail);
 
         ingredientsIv = findViewById(R.id.image_iv);
-       // placeOfOrigin = (TextView) findViewById(R.id.origin_tv);
+        placeOfOrigin = (TextView) findViewById(R.id.origin_tv);
       //  description = (TextView) findViewById(R.id.description_tv);
         alsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
        // ingredients = (TextView) findViewById(R.id.ingredients_tv);
@@ -78,15 +78,15 @@ public class DetailActivity extends AppCompatActivity
 
     private void populateUI(Sandwich sandwich)
     {
-//       placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
-//
-//       // if the strings are empty, the text will be set to "No data found"
-//       // The code structure below is based on the answers given in this thread:
-//       // https://stackoverflow.com/questions/46040636/check-if-textview-is-empty
-//       if(placeOfOrigin.getText().toString().equals(""))
-//      {
-//           placeOfOrigin.setText(R.string.no_data);
-//      }
+       placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
+
+       // if the strings are empty, the text will be set to "No data found"
+       // The code structure below is based on the answers given in this thread:
+       // https://stackoverflow.com/questions/46040636/check-if-textview-is-empty
+       if(placeOfOrigin.getText().toString().equals(""))
+      {
+           placeOfOrigin.setText(R.string.no_data);
+      }
 
 //        description.setText(sandwich.getDescription());
 //
