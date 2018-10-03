@@ -31,9 +31,9 @@ public class DetailActivity extends AppCompatActivity
 
         ingredientsIv = findViewById(R.id.image_iv);
         placeOfOrigin = (TextView) findViewById(R.id.origin_tv);
-      //  description = (TextView) findViewById(R.id.description_tv);
+        description = (TextView) findViewById(R.id.description_tv);
         alsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
-       // ingredients = (TextView) findViewById(R.id.ingredients_tv);
+        ingredients = (TextView) findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null)
@@ -88,28 +88,28 @@ public class DetailActivity extends AppCompatActivity
            placeOfOrigin.setText(R.string.no_data);
       }
 
-//        description.setText(sandwich.getDescription());
-//
-//        if(description.getText().toString().equals(""))
-//        {
-//            description.setText(R.string.no_data);
-//        }
+        description.setText(sandwich.getDescription());
+
+        if(description.getText().toString().equals(""))
+        {
+            description.setText(R.string.no_data);
+        }
 
         // Set the ingredients & alsoKnownAs arrays into single TextViews using StringBuilder
         // The code structure below is based on the answer given in this thread:
         // https://stackoverflow.com/questions/17313495/how-to-display-multiline-from-array-list-in-single-textview
-//        StringBuilder builder = new StringBuilder();
-//        for (String ingredientString : sandwich.getIngredients())
-//        {
-//            builder.append(ingredientString + "\n");
-//        }
-//
-//        ingredients.setText(builder.toString());
-//
-//        if(ingredients.getText().toString().equals(""))
-//        {
-//            ingredients.setText(R.string.no_data);
-//        }
+        StringBuilder builder = new StringBuilder();
+        for (String ingredientString : sandwich.getIngredients())
+        {
+            builder.append(ingredientString + "\n");
+        }
+
+        ingredients.setText(builder.toString());
+
+        if(ingredients.getText().toString().equals(""))
+        {
+            ingredients.setText(R.string.no_data);
+        }
 
         StringBuilder builder2 = new StringBuilder();
         for(String alsoKnownString : sandwich.getAlsoKnownAs())
