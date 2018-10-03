@@ -40,8 +40,8 @@ public class JsonUtils
         }
 
         Sandwich sandwich = null;
-        try {
-
+        try
+        {
             // Create a JSONObject from the JSON file
             JSONObject jsonObject = new JSONObject(json);
 
@@ -93,7 +93,6 @@ public class JsonUtils
             }
 
             sandwich = new Sandwich(mainName, alsoKnownData, placeOfOrigin, description, image, ingredientsData);
-
         }
         catch (JSONException e)
         {
