@@ -37,18 +37,17 @@
 
         <TextView
             android:id="@+id/also_known_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/DetailDataStyle"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="12dp"
             android:layout_marginRight="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/also_known_tv_label"
             app:layout_constraintBottom_toTopOf="@+id/origin_tv"
             app:layout_constraintTop_toBottomOf="@+id/image_iv"
+            app:layout_constraintHorizontal_bias="0.0"
             tools:text="@string/tools_also_data" />
 
         <TextView
@@ -63,18 +62,17 @@
 
         <TextView
             android:id="@+id/origin_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/DetailDataStyle"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/description_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/origin_tv_label"
             app:layout_constraintTop_toBottomOf="@+id/also_known_tv"
+            app:layout_constraintBottom_toTopOf="@+id/description_tv"
+            app:layout_constraintHorizontal_bias="0.0"
             tools:text="@string/tools_origin_data" />
 
         <TextView
@@ -89,8 +87,7 @@
 
         <TextView
             android:id="@+id/description_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/DetailDataStyle"
             android:layout_marginStart="36dp"
             android:layout_marginLeft="36dp"
             android:layout_marginEnd="36dp"
@@ -99,8 +96,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/description_tv_label"
-            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
             app:layout_constraintBottom_toTopOf="@+id/ingredients_tv"
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
             tools:text="@string/tools_desc_data" />
 
         <TextView
@@ -115,8 +112,7 @@
 
         <TextView
             android:id="@+id/ingredients_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/DetailDataStyle"
             android:layout_marginStart="36dp"
             android:layout_marginLeft="36dp"
             android:layout_marginEnd="36dp"
@@ -124,8 +120,8 @@
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toEndOf="@+id/ingredients_tv_label"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintTop_toBottomOf="@+id/description_tv"
+            app:layout_constraintHorizontal_bias="0.0"
             tools:text="@string/tools_ingredients_data" />
 
     </android.support.constraint.ConstraintLayout>

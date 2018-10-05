@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Label settings in activity_detail -->
     <style name="DetailLabelStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
@@ -17,6 +18,9 @@
         <item name="android:textSize">17sp</item>
     </style>
 
-    <!-- Description label and list settings in activity_detail -->
-
+    <!-- Data settings in activity_detail -->
+    <style name="DetailDataStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
 </resources>
