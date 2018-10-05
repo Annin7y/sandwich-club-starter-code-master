@@ -14,6 +14,12 @@
     <string name="detail_error_message">Sandwich data not available</string>
     <string name="no_data">No data found</string>
 
+    <!-- Tools text-->
+    <string name="tools_also_data">Also known data</string>
+    <string name="tools_origin_data">Origin data</string>
+    <string name="tools_desc_data">Description data</string>
+    <string name="tools_ingredients_data">Ingredients data</string>
+
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>
         <item>Bosna</item>

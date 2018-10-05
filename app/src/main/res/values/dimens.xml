@@ -4,33 +4,12 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <!-- ImageView settings in activity_detail -->
-    <dimen name="label_margin">15dp</dimen>
     <dimen name="image_height">200dp</dimen>
-    <dimen name="image_padding">2dp</dimen>
+    <dimen name="label_margin_start">8dp</dimen>
+    <dimen name="label_margin_left">16dp</dimen>
 
     <!-- TextView Title labels Margin Start, Left in activity_detail -->
-    <dimen name="label_margin_start">15dp</dimen>
 
-    <!-- Text Margin Start, Left in activity_detail -->
-    <dimen name="also_list_margin_left">15dp</dimen>
-    <dimen name="also_list_margin_start">15dp</dimen>
 
-    <!-- Also Known As label and list settings in activity_detail -->
-    <dimen name="also_label_margin_top">45dp</dimen>
-    <dimen name="also_list_margin_top">50dp</dimen>
-
-    <!-- Origin label and list settings in activity_detail -->
-    <dimen name="origin_label_top">150dp</dimen>
-    <dimen name="origin_list_top">153dp</dimen>
-    <dimen name="list_origin_right">5dp</dimen>
-
-    <!-- Description label and list settings in activity_detail -->
-    <dimen name="description_label_top">40dp</dimen>
-    <dimen name="description_list_top">43dp</dimen>
-    <dimen name="description_list_right">7dp</dimen>
-    <dimen name="ingredients_label_top">190dp</dimen>
-    <dimen name="ingredients_list_top">193dp</dimen>
-    <dimen name="ingredients_list_right">5dp</dimen>
-    <dimen name="list_padding">3dp</dimen>
 
 </resources>
