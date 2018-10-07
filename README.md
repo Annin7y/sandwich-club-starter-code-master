@@ -4,7 +4,7 @@ Screenshot of the detail activity attached below as well as the instructions wri
 
 ## Screenshots
 
-![screenshot_20180927-081612](https://user-images.githubusercontent.com/22602021/46145478-43686780-c22e-11e8-88bb-8c7914a1c830.jpg)
+![screenshot_20181007-124117](https://user-images.githubusercontent.com/22602021/46584607-661b2d00-ca33-11e8-9b2e-893848015b57.jpg)
 
 ## Project Overview
 In this project, you will complete the **Sandwich Club** app to
