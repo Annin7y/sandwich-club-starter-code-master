@@ -1,16 +1,16 @@
-package com.udacity.sandwichclub;
+package com.udacity.sandwichclub.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.model.Sandwich;
-import com.udacity.sandwichclub.utils.JsonUtils;
+import com.udacity.sandwichclub.utils.JSONUtils;
 
 public class DetailActivity extends AppCompatActivity
 {
@@ -51,7 +51,7 @@ public class DetailActivity extends AppCompatActivity
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
-        Sandwich sandwich = JsonUtils.parseSandwichJson(json);
+        Sandwich sandwich = JSONUtils.parseSandwichJson(json);
         if (sandwich == null)
         {
             // Sandwich data unavailable

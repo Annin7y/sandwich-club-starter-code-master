@@ -12,12 +12,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonUtils
+public class JSONUtils
 {
     /**
      * Tag for the log messages
      */
-    private static final String LOG_TAG = JsonUtils.class.getSimpleName();
+    private static final String LOG_TAG = JSONUtils.class.getSimpleName();
 
     //keys used when parsing JSON
     private static final String KEY_MAIN_NAME = "mainName";
@@ -27,7 +27,7 @@ public class JsonUtils
     private static final String KEY_IMAGE = "image";
     private static final String KEY_INGREDIENTS = "ingredients";
 
-    public JsonUtils()
+    public JSONUtils()
     {
     }
 
